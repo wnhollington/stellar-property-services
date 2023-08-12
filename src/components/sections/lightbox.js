@@ -18,7 +18,7 @@ const ImageGallery = () => {
                   node {
                     id
                     childImageSharp {
-                        gatsbyImageData(width:500, height:350)
+                        gatsbyImageData(width:500, height:350, layout:FIXED)
                     }
                   }
                 }
@@ -30,15 +30,14 @@ const ImageGallery = () => {
             <div className={`container my-24 animated animatedFadeInUp ${inView ? 'fadeInUp' : null}`}>
                 <h2 className="text-center text-3xl font-semibold mb-2">Past Projects</h2>
                 <div className="w-10 mx-auto border-b-4 border-blue-800 mb-8"></div>
-                <div className="relative w-full flex gap-4 snap-x overflow-x-auto">
+                <div className="flex gap-4 overflow-x-scroll">
                     {
                         data.allFile.edges.map((edge => {
                             return (
-                                <div className="" onClick={() => setToggler(!toggler)}>
+                                <div onClick={() => setToggler(!toggler)}>
                                     <GatsbyImage 
                                         image={edge.node.childImageSharp.gatsbyImageData}
-                                        className="snap-center shrink-0 first:pl-8 last:pr-8"
-                                        imgClassName="shrink-0 rounded-lg shadow-xl bg-white"
+                                        imgClassName="rounded-lg shadow-xl bg-white"
                                     />
                                 </div>
                             )
