@@ -37,7 +37,7 @@ const Header = () => {
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                         <div className="flex flex-row justify-center phone">
                             <BsFillTelephoneFill size={22}/>
-                            <a href="tel:720.383.0918" className="text-md font-semibold leading-6 text-gray-900 hover:text-blue-900 ml-2">303-909-1127</a>
+                            <a href="tel:303.909.1227" className="text-md font-semibold leading-6 text-gray-900 hover:text-blue-900 ml-2">303-909-1227</a>
                         </div>
                     </div>
                 </nav>
@@ -67,7 +67,7 @@ const Header = () => {
                                 <div className="my-6 py-6">
                                     <div className="flex flex-row justify-center phone">
                                         <BsFillTelephoneFill size={22}/>
-                                        <a href="tel:720.383.0918" className="text-md font-semibold leading-6 text-gray-900 hover:text-blue-900 ml-2">303-909-1227</a>
+                                        <a href="tel:303.909.1227" className="text-md font-semibold leading-6 text-gray-900 hover:text-blue-900 ml-2">303-909-1227</a>
                                     </div>
                                 </div>
                             </div>
