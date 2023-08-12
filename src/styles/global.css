@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+article h1 {
+    @apply text-4xl
+}
+article h2 {
+    @apply text-3xl
+}
+article h3 {
+    @apply text-2xl
+}
+article h4 {
+    @apply text-xl
+}
+article p {
+    @apply text-lg py-2
+}
+article h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold py-2
+}
+article a {
+    @apply text-primary-800 underline decoration-dotted
+}
+article a:hover {
+    @apply text-primary-900 decoration-solid
+}
+::selection {
+    @apply text-white bg-primary-900
+}
+
+#services svg, #process svg {
+    @apply mx-auto fill-blue-800
+}
+
+/* FAQS */
+.accordion button h2 {
+    @apply text-lg py-2
+}
+
+.accordion div {
+    @apply text-lg text-gray-500 py-4
+}
+
+/* Header */
+header .phone svg {
+	@apply fill-blue-900
+}
+
+/* SVG Waves */
+.wave svg path{
+	animation:pathAnim 20s; 
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+.wave svg path:nth-child(2){
+	animation-delay: 1s
+}
+.wave svg path:nth-child(3){
+	animation-delay: 3s
+}
+.wave svg path:nth-child(4){
+	animation-play-state: 2s;
+}
+
+@keyframes pathAnim{
+	0%{
+		d: path("M0,192	C220,100,440,100,660,192 C880,290,1100,290,1320,192	L1320 500 L0 500");
+	}
+	25%{
+		d: path("M0,100	C220,100,440,292,660,292 C880,292,1100,100,1320,100	L1320 500 L0 500");
+	}
+	50%{
+		d: path("M0,192	C220,290,440,290,660,192 C880,100,1100,100,1320,192	L1320 500 L0 500");
+	}
+	75%{
+		d: path("M0,100	C220,100,440,292,660,292 C880,292,1100,100,1320,100	L1320 500 L0 500");
+	}
+	100%{
+		d: path("M0,192	C220,100,440,100,660,192 C880,290,1100,290,1320,192	L1320 500 L0 500");
+	}
+}
+
+@-webkit-keyframes pathAnim{
+	0%{
+		d: path("M0,192	C220,100,440,100,660,192 C880,290,1100,290,1320,192	L1320 500 L0 500");
+	}
+	25%{
+		d: path("M0,100	C220,100,440,292,660,292 C880,292,1100,100,1320,100	L1320 500 L0 500");
+	}
+	50%{
+		d: path("M0,192	C220,290,440,290,660,192 C880,100,1100,100,1320,192	L1320 500 L0 500");
+	}
+	75%{
+		d: path("M0,100	C220,100,440,292,660,292 C880,292,1100,100,1320,100	L1320 500 L0 500");
+	}
+	100%{
+		d: path("M0,192	C220,100,440,100,660,192 C880,290,1100,290,1320,192	L1320 500 L0 500");
+	}
+}
+
+/* Animation Effects */
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 75px, 0)
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 75px, 0)
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+.animated {
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0;
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    visibility: block;
+}

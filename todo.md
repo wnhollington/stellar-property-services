@@ -1,0 +1,2 @@
+- testimonial carousel
+- image lightbox
