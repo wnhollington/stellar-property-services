@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer"
 import { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import FsLightbox from "fslightbox-react"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const ImageGallery = () => {
     const { ref, inView } = useInView({
@@ -18,7 +18,7 @@ const ImageGallery = () => {
                   node {
                     id
                     childImageSharp {
-                        gatsbyImageData
+                        gatsbyImageData(width:500, height:350)
                     }
                   }
                 }
@@ -30,13 +30,15 @@ const ImageGallery = () => {
             <div className={`container my-24 animated animatedFadeInUp ${inView ? 'fadeInUp' : null}`}>
                 <h2 className="text-center text-3xl font-semibold mb-2">Past Projects</h2>
                 <div className="w-10 mx-auto border-b-4 border-blue-800 mb-8"></div>
-                <div className="flex">
+                <div className="relative w-full flex gap-4 snap-x overflow-x-auto">
                     {
                         data.allFile.edges.map((edge => {
                             return (
-                                <div className="px-1" onClick={() => setToggler(!toggler)}>
+                                <div className="" onClick={() => setToggler(!toggler)}>
                                     <GatsbyImage 
                                         image={edge.node.childImageSharp.gatsbyImageData}
+                                        className="snap-center shrink-0 first:pl-8 last:pr-8"
+                                        imgClassName="shrink-0 rounded-lg shadow-xl bg-white"
                                     />
                                 </div>
                             )
