@@ -34,6 +34,7 @@ const ImageGallery = () => {
             }
         }
     `)
+    var imageSources = []
     return (
         <section id="lightbox" ref={ref}>
             <div className={`container my-24 animated animatedFadeInUp ${inView ? 'fadeInUp' : null}`}>
@@ -42,6 +43,7 @@ const ImageGallery = () => {
                 <div className="flex gap-4 overflow-x-scroll">
                     {
                         data.allFile.edges.map((edge,index) => {
+                            imageSources.push(edge.node.childImageSharp.gatsbyImageData.images.fallback.src)
                             return(
                                 <div onClick={() => openLightboxOnSlide(index+1)}>
                                     <GatsbyImage 
@@ -56,13 +58,7 @@ const ImageGallery = () => {
             </div>
             <FsLightbox
                 toggler={lightboxController.toggler}
-                sources={[
-                    "/static/fc4ba4f08c8462fb507f90ef519ea6de/40072/lightbox1.webp",
-                    "/static/f556028b0d7152fb08c32a052876b23b/ac291/lightbox2.webp",
-                    "/static/381ccd50386a900ff518248e0f620b60/7bef4/lightbox3.webp",
-                    "/static/e4fe322c791476a6afc8dbf709a7fa8d/7bef4/lightbox4.webp",
-                    "/static/89ff747ce17add8cc69bee69f90c2560/40072/lightbox5.webp",
-                ]}
+                sources={imageSources}
                 slide={lightboxController.slide}
             />
         </section>
